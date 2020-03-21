@@ -1,4 +1,4 @@
-package TheClassics.Singleton.Example3;
+package TheClassics.Singleton.EagerInitialization3;
 
 public class EagerSingleton {
 
@@ -7,11 +7,19 @@ public class EagerSingleton {
         - making it static ensures that it is instantiated when the program starts.
      */
     private final static EagerSingleton singleton = new EagerSingleton();
+    private static int counter = 0;
+
+    public static int getCounter() {
+        return counter;
+    }
 
     /*
         The purpose of the private constructor is to prevent dynamic instantiation (i.e. no "new" keyword).
      */
     private EagerSingleton() {
+
+        counter++;
+        System.out.println("Instance Counter: " + counter);
         System.out.println("Creating single instance of singleton");
     }
 

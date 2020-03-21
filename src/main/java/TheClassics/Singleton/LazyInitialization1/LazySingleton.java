@@ -1,4 +1,4 @@
-package TheClassics.Singleton.Example1;
+package TheClassics.Singleton.LazyInitialization1;
 
 /*
     This is final to prevent inheritance

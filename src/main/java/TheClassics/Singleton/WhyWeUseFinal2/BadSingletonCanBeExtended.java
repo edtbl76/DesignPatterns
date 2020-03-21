@@ -1,4 +1,4 @@
-package TheClassics.Singleton.Example2;
+package TheClassics.Singleton.WhyWeUseFinal2;
 
 /*
     This isn't final this time.
@@ -6,7 +6,11 @@ package TheClassics.Singleton.Example2;
 public class BadSingletonCanBeExtended {
 
     private static BadSingletonCanBeExtended singleton;
-    public static int counter = 0;
+    private static int counter = 0;
+
+    public static int getCounter() {
+        return counter;
+    }
 
     /*
         This is still private.

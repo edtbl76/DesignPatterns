@@ -1,4 +1,4 @@
-package TheClassics.Singleton.Example2;
+package TheClassics.Singleton.WhyWeUseFinal2;
 
 public class Launcher {
 

@@ -1,4 +1,4 @@
-package TheClassics.Singleton.Example3;
+package TheClassics.Singleton.EagerInitialization3;
 
 public class Launcher {
 
@@ -15,6 +15,9 @@ public class Launcher {
 
             This demonstrates one of the drawbacks of Eager initialization... we end up with objects loaded in
             memory that we might not care about, soaking up resources that we might need for other purposes.
+
+            This lack of isolation between the "Singleton" and other methods is a limitation, but Example 4
+            proposes a solution...
          */
         System.out.println("Trying to create a singleton!");
         EagerSingleton.runJob();
