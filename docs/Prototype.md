@@ -82,3 +82,4 @@ Prototype worth considering in context of data sharing.
 //TODO insert diagram here.
 
 ## Recommended Use
+- reducing boilerplate/complex object instantiation
