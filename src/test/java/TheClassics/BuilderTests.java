@@ -1,7 +1,7 @@
 package TheClassics;
 
-import TheClassics.Builder.AbstractBuilder.*;
-import TheClassics.Builder.InterfaceBuilder.*;
+import TheClassics.Builder.AbstractBuilder2.*;
+import TheClassics.Builder.InterfaceBuilder1.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 
@@ -65,5 +65,10 @@ public class BuilderTests {
         director.build(b2);
         b2.getComplexObject().print();
         assertTrue(output.getOut().contains("<-[fromInterface]::pavement::Widgetron::Doohickey::[MORE]->"));
+    }
+
+    @Test
+    public void testDirectorlessBuilder() {
+
     }
 }

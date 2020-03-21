@@ -1,4 +1,5 @@
-package TheClassics.Builder.InterfaceBuilder;
+package TheClassics.Builder.AbstractBuilder2;
+
 
 import java.util.*;
 
@@ -9,9 +10,9 @@ public class Launcher {
         /*
             Instantiate director and our ConcreteBuilders.
          */
-        InterfaceDirector director = new InterfaceDirector();
-        InterfaceBuilder cb1 = new ConcreteBuilderOne("CBOne");
-        InterfaceBuilder cb2 = new ConcreteBuilderTwo("CBTwo");
+        AbstractDirector director = new AbstractDirector();
+        AbstractBuilder cb1 = new AbstractConcreteBuilderOne("CBOne");
+        AbstractBuilder cb2 = new AbstractConcreteBuilderTwo("CBTwo");
 
         /*
             Build the ComplexObject and print out the result.

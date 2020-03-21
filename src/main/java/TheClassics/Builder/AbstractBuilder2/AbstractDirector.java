@@ -1,6 +1,4 @@
-package TheClassics.Builder.AbstractBuilder;
-
-import TheClassics.Builder.InterfaceBuilder.*;
+package TheClassics.Builder.AbstractBuilder2;
 
 public class AbstractDirector {
 

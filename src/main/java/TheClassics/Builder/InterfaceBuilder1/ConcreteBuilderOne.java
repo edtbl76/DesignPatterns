@@ -1,13 +1,13 @@
-package TheClassics.Builder.InterfaceBuilder;
+package TheClassics.Builder.InterfaceBuilder1;
 
 import TheClassics.Builder.Model.*;
 
-public class ConcreteBuilderTwo implements InterfaceBuilder {
+public class ConcreteBuilderOne implements InterfaceBuilder {
 
     private String name;
     private ComplexObject object;
 
-    public ConcreteBuilderTwo(String name) {
+    public ConcreteBuilderOne(String name) {
         object = new ComplexObject();
         this.name = name;
     }
@@ -18,28 +18,28 @@ public class ConcreteBuilderTwo implements InterfaceBuilder {
 
     @Override
     public void start() {
-        // empty
+        // Start with name
+        object.add(String.format("Name[%s]", this.name));
     }
 
     @Override
     public void buildBase() {
-        object.add("Pavement");
+        object.add("ConcreteBase");
     }
 
     @Override
     public void addWidget() {
-        object.add("Widgetorious");
+        object.add("Widgetarian");
     }
 
     @Override
     public void insertDoohickey() {
-        object.add("42 Doohickeys");
+        object.add("10 Doohickeys");
     }
 
     @Override
     public void end() {
-        // Finish with name
-        object.add(String.format("Name[%s]", this.name));
+        // empty
     }
 
     @Override

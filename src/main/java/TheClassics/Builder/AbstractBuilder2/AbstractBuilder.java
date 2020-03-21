@@ -1,4 +1,4 @@
-package TheClassics.Builder.AbstractBuilder;
+package TheClassics.Builder.AbstractBuilder2;
 
 import TheClassics.Builder.Model.*;
 
