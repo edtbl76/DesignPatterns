@@ -11,16 +11,21 @@ object from its representation
 aspect of the object from the multiple moving parts of the object
     - it has to remain abstract from the components so that it can support
     the creation of multiple different representations
+    
+IMMUTABILITY <br> 
+The target objects of the Builder pattern are almost always immutable (i.e. can't be changed)
+- useful for sharing data
+- inherently thread safe, because it is immune to the side effects of race conditions.
 
 ## Implementation Details
-COMPLEX OBJECT<br>
+
+### COMPLEX OBJECT<br>
 - this is the target of the Builder pattern. It is the object we want to create.
 
-BUILDER <br>
+### BUILDER <br>
 -  interface that provides the generalized methods that should be implemented in order to create "a" representation
 of the complex object we want to create
 
-### INTERFACE 
 If you have several representations that each have completely different implementations, you'll have to use an interface, 
 with entirely different ConcreteBuilders for each representation. 
 
@@ -48,15 +53,18 @@ Oracle generously provides guidelines in which abstract classes should be prefer
 
 
 
-CONCRETE BUILDER <br>
+### CONCRETE BUILDER <br>
 - these are implementations of the Builder, so they must implement the interface. 
 - we need 1 class for each type of representation we'll need to create. 
 - This is one of the major PROS of the Builder pattern (and interfaces in general), we can provide a different 
 implementation for different use cases. 
 
-DIRECTOR<br>
+### DIRECTOR<br>
 - The director knows how to assemble the complex object. I.e. it is responsible for instantiating the builder object
 and executing the necessary steps to instantiate each representation of the Complex Object
+
+This is optional. There are ways (see "NoDirectorExample") to provide a very robust, flexible version of the Builder
+pattern without using a Director. 
 
 ### PROS
 - Some complex objects require a substantial amount of procedural/tedious setup. The builder pattern encapsulates
@@ -72,6 +80,7 @@ been completed.
 
 ### CONS
 - The pattern doesn't work very well with mutable objects. 
+    - This is important. Implementation requires judicious use of FINAL and PRIVATE keywords. 
 - The pattern can suffer from issues when trying to duplicate some of the steps under certain circumstances. 
 - If you have MANY different representations, you'll likewise have MANY different ConcreteBuilders. 
 
@@ -81,4 +90,6 @@ been completed.
 ## Recommended Use
 - The best use case for the Builder is for creating extremely complicated objects, but keep in mind that this can
 become very tedious if you have a large number of different representations to support through this pattern. 
+- The resulting object should be IMMUTABLE
+    - This is important. Implementation requires judicious use of FINAL and PRIVATE keywords. 
   

@@ -2,11 +2,14 @@ package TheClassics;
 
 import TheClassics.Builder.AbstractBuilder2.*;
 import TheClassics.Builder.InterfaceBuilder1.*;
+import TheClassics.Builder.Model.*;
+import TheClassics.Builder.NoDirectorExample.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 
 import static org.junit.Assert.*;
 
+@SuppressWarnings("deprecation")
 public class BuilderTests {
 
     // **** RULES ****
@@ -14,7 +17,10 @@ public class BuilderTests {
     public OutputCaptureRule output = new OutputCaptureRule();
 
     // **** TESTS ****
-    @SuppressWarnings("deprecation")
+    /*
+        Yes, I know... I should be breaking down the tests further, but I'm organizing them in a manner that the
+        are associated with the examples....Shut up.
+     */
     @Test
     public void testInterfaceBuilder() {
         InterfaceDirector director = new InterfaceDirector();
@@ -51,6 +57,8 @@ public class BuilderTests {
 
     @Test
     public void testAbstractBuilder() {
+        output.reset();
+
         AbstractDirector director = new AbstractDirector();
 
         AbstractConcreteBuilderOne testBuilder = new AbstractConcreteBuilderOne("fromImpl");
@@ -69,6 +77,62 @@ public class BuilderTests {
 
     @Test
     public void testDirectorlessBuilder() {
+        output.reset();
 
+        /*
+            Test the getters
+         */
+        final ComplexObjectClass getterTest = new ConcreteBuilder().assembleObject();
+        assertEquals(getterTest.getStartMessage(), "Building Thing One");
+        assertEquals(getterTest.getObjectType(), "concrete");
+        assertEquals(getterTest.getWidgetType(), "Widget Jr");
+        assertEquals(getterTest.getNumberOfDoohickeys(), 37);
+        assertEquals(getterTest.getEndMessage(), "Completing Thing One");
+
+        /*
+            Test to String.
+         */
+        final ComplexObjectClass co1 = new ConcreteBuilder().assembleObject();
+        System.out.println(co1);
+        assertEquals(
+               "ComplexObjectClass{startMessage='Building Thing One', " +
+                       "objectType='concrete', " +
+                       "widgetType='Widget Jr', " +
+                       "numberOfDoohickeys=37, " +
+                       "endMessage='Completing Thing One'}\n", output.getOut()
+        );
+        output.reset();
+
+        /*
+            Test result after creation of custom builder.
+         */
+        ChainedBuilder cb = new ConcreteBuilder();
+        final ComplexObjectClass co2 = cb
+                .start("a")
+                .buildBase("b")
+                .addWidget("c")
+                .insertDoohickeys(1)
+                .end("d").assembleObject();
+        System.out.println(co2);
+        assertEquals(
+                "ComplexObjectClass{startMessage='a', " +
+                        "objectType='b', " +
+                        "widgetType='c', " +
+                        "numberOfDoohickeys=1, " +
+                        "endMessage='d'}\n", output.getOut()
+        );
+        output.reset();
+
+        /*
+            Test getAssembled
+        */
+        System.out.println(cb.getAssembledObject());
+        assertEquals(
+                "ComplexObjectClass{startMessage='a', " +
+                        "objectType='b', " +
+                        "widgetType='c', " +
+                        "numberOfDoohickeys=1, " +
+                        "endMessage='d'}\n", output.getOut()
+        );
     }
 }
