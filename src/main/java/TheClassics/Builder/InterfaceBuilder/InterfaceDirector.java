@@ -1,10 +1,10 @@
-package TheClassics.Builder.CommonImpl;
+package TheClassics.Builder.InterfaceBuilder;
 
-public class Director {
+public class InterfaceDirector {
 
-    Builder builder;
+    InterfaceBuilder builder;
 
-    public void build(Builder builder) {
+    public void build(InterfaceBuilder builder) {
         this.builder = builder;
         builder.start();
         builder.buildBase();

@@ -1,6 +1,8 @@
-package TheClassics.Builder.CommonImpl;
+package TheClassics.Builder.InterfaceBuilder;
 
-public class ConcreteBuilderOne implements Builder {
+import TheClassics.Builder.Model.*;
+
+public class ConcreteBuilderOne implements InterfaceBuilder {
 
     private String name;
     private ComplexObject object;

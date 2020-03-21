@@ -1,10 +1,11 @@
 package TheClassics;
 
-import TheClassics.Builder.CommonImpl.*;
-import TheClassics.Prototype.Cloneable1.*;
-import TheClassics.Prototype.Copyable2.*;
+import TheClassics.Builder.AbstractBuilder.*;
+import TheClassics.Builder.InterfaceBuilder.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
+
+import static org.junit.Assert.*;
 
 public class BuilderTests {
 
@@ -13,9 +14,10 @@ public class BuilderTests {
     public OutputCaptureRule output = new OutputCaptureRule();
 
     // **** TESTS ****
+    @SuppressWarnings("deprecation")
     @Test
-    public void testCommonBuilderImplementation() {
-        Director director = new Director();
+    public void testInterfaceBuilder() {
+        InterfaceDirector director = new InterfaceDirector();
 
         /*
             Create instance of ConcreteBuilder and test that I can access the name.
@@ -24,28 +26,44 @@ public class BuilderTests {
                 (This is a demonstration of one possible way to  build in backdoors in the implementation of an API)
          */
         ConcreteBuilderOne cb1 = new ConcreteBuilderOne("fromImpl");
-        Assert.assertEquals(cb1.getName(), "fromImpl");
+        assertEquals(cb1.getName(), "fromImpl");
 
         /*
             Build our object, print it out and check the output for each representation
          */
-        Builder b1 = new ConcreteBuilderOne("fromInterface");
+        InterfaceBuilder b1 = new ConcreteBuilderOne("fromInterface");
         director.build(b1);
         b1.getComplexObject().print();
-        Assert.assertEquals(
+        assertEquals(
                 "ComplexObject: \n\tName[fromInterface]::ConcreteBase::Widgetarian::10-Doohickeys\n",
                 output.getOut());
 
         output.reset();
 
-        Builder b2 = new ConcreteBuilderTwo("fromInterface");
+        InterfaceBuilder b2 = new ConcreteBuilderTwo("fromInterface");
         director.build(b2);
         b2.getComplexObject().print();
-        Assert.assertEquals(
+        assertEquals(
                 "ComplexObject: \n\tPavement::Widgetorious::42-Doohickeys::Name[fromInterface]\n",
                 output.getOut());
 
     }
 
+    @Test
+    public void testAbstractBuilder() {
+        AbstractDirector director = new AbstractDirector();
 
+        AbstractConcreteBuilderOne testBuilder = new AbstractConcreteBuilderOne("fromImpl");
+        assertEquals(testBuilder.getName(), "fromImpl");
+
+        AbstractBuilder b1 = new AbstractConcreteBuilderOne("fromInterface");
+        director.build(b1);
+        b1.getComplexObject().print();
+        assertTrue(output.getOut().contains("<-[fromInterface]::concrete::Widgetron::Doohickey::[EOM]->"));
+
+        AbstractBuilder b2 = new AbstractConcreteBuilderTwo("fromInterface");
+        director.build(b2);
+        b2.getComplexObject().print();
+        assertTrue(output.getOut().contains("<-[fromInterface]::pavement::Widgetron::Doohickey::[MORE]->"));
+    }
 }

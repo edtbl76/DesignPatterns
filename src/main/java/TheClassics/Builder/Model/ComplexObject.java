@@ -1,4 +1,4 @@
-package TheClassics.Builder.CommonImpl;
+package TheClassics.Builder.Model;
 
 import java.util.*;
 

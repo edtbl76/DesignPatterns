@@ -7,6 +7,8 @@ import TheClassics.Singleton.NestedHelper4.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 
+import static org.junit.Assert.*;
+
 public class SingletonTests {
 
     // **** RULES ****
@@ -24,7 +26,7 @@ public class SingletonTests {
         LazySingleton s1 = LazySingleton.getSingleton();
         LazySingleton s2 = LazySingleton.getSingleton();
 
-        Assert.assertEquals(s1, s2);
+        assertEquals(s1, s2);
     }
 
     /*
@@ -35,13 +37,13 @@ public class SingletonTests {
     @Test
     public void TestForFinal() {
         BadSingletonCanBeExtended s1 = BadSingletonCanBeExtended.getSingleton();
-        Assert.assertEquals(BadSingletonCanBeExtended.getCounter(), 1);
+        assertEquals(BadSingletonCanBeExtended.getCounter(), 1);
 
         BadSingletonCanBeExtended s2 = BadSingletonCanBeExtended.getSingleton();
-        Assert.assertEquals(BadSingletonCanBeExtended.getCounter(), 1);
+        assertEquals(BadSingletonCanBeExtended.getCounter(), 1);
 
         BadSingletonCanBeExtended.InnerSingleton s3 = s1.new InnerSingleton();
-        Assert.assertEquals(BadSingletonCanBeExtended.getCounter(), 2);
+        assertEquals(BadSingletonCanBeExtended.getCounter(), 2);
 
     }
 
@@ -59,7 +61,7 @@ public class SingletonTests {
     @Test
     public void EagerInitializationTest() {
         EagerSingleton.runJob();
-        Assert.assertTrue(output.getOut().contains("Instance Counter: 1"));
+        assertTrue(output.getOut().contains("Instance Counter: 1"));
     }
 
     /*
@@ -74,7 +76,7 @@ public class SingletonTests {
     @Test
     public void NestedHelperTest() {
         PughSingleton.runJob();
-        Assert.assertFalse(output.getOut().contains("Instance Counter"));
+        assertFalse(output.getOut().contains("Instance Counter"));
     }
 
 

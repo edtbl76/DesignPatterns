@@ -5,6 +5,8 @@ import TheClassics.Prototype.Copyable2.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 
+import static org.junit.Assert.*;
+
 public class PrototypeTests {
 
     // **** RULES ****
@@ -21,8 +23,8 @@ public class PrototypeTests {
         ClonePrototype cm1 = new CloneModelOne("cm1");
         ClonePrototype cm2 = new CloneModelTwo("cm2");
 
-        Assert.assertEquals(cm1.getModel(), "cm1");
-        Assert.assertEquals(cm2.getModel(), "cm2");
+        assertEquals(cm1.getModel(), "cm1");
+        assertEquals(cm2.getModel(), "cm2");
 
         /*
             Set cost and confirm correctness
@@ -30,8 +32,8 @@ public class PrototypeTests {
         cm1.setCost(100);
         cm2.setCost(150);
 
-        Assert.assertEquals(cm1.getCost(), 100);
-        Assert.assertEquals(cm2.getCost(), 150);
+        assertEquals(cm1.getCost(), 100);
+        assertEquals(cm2.getCost(), 150);
 
         /*
             Create random values we'll need to use to inject into the test statements below.
@@ -51,12 +53,12 @@ public class PrototypeTests {
         p1.setPrice(price1);
         p2.setPrice(price2);
 
-        Assert.assertEquals(p1.getPrice(), price1);
-        Assert.assertEquals(p2.getPrice(), price2);
+        assertEquals(p1.getPrice(), price1);
+        assertEquals(p2.getPrice(), price2);
 
     }
 
-
+    @SuppressWarnings("deprecation")
     @Test
     public void testCopyPrototype() {
 
@@ -64,14 +66,14 @@ public class PrototypeTests {
             Create new object and tests accessors.
          */
         CopyPrototype cp1 = new CopyPrototype(1, "one");
-        Assert.assertEquals(cp1.getSerialNumber(), 1);
-        Assert.assertEquals(cp1.getModel(), "one");
+        assertEquals(cp1.getSerialNumber(), 1);
+        assertEquals(cp1.getModel(), "one");
 
         /*
             Test the print() method
          */
         cp1.print();
-        Assert.assertEquals("Model: one S/N: 1\n", output.getOut());
+        assertEquals("Model: one S/N: 1\n", output.getOut());
 
 
         /*
@@ -84,17 +86,13 @@ public class PrototypeTests {
             Test copy constructor and retest the accessors
          */
         CopyPrototype copied = new CopyPrototype(cp1);
-        Assert.assertEquals(copied.getSerialNumber(), 1);
-        Assert.assertEquals(copied.getModel(), "one");
+        assertEquals(copied.getSerialNumber(), 1);
+        assertEquals(copied.getModel(), "one");
 
         /*
             Test the print() method from the copied object.
          */
         copied.print();
-        Assert.assertEquals("Model: one S/N: 1\n", output.getOut());
+        assertEquals("Model: one S/N: 1\n", output.getOut());
     }
-
-
-
-
 }

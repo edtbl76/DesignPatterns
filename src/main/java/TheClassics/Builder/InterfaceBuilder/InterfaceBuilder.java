@@ -1,6 +1,8 @@
-package TheClassics.Builder.CommonImpl;
+package TheClassics.Builder.InterfaceBuilder;
 
-public interface Builder {
+import TheClassics.Builder.Model.*;
+
+public interface InterfaceBuilder {
 
     void start();
     void buildBase();
