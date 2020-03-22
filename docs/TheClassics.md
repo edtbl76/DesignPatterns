@@ -4,3 +4,11 @@ By the classics, I'm referring to the patterns introduced in the 1994 book
 (Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides)
 
 *** 
+
+## Creational Patterns
+Creational Patterns are patterns that solve problems associated with
+creating objects directly. 
+- reducing complexity
+- reducing boilerplate
+- increasing flexibility/extensibility
+

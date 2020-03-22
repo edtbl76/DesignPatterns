@@ -1,9 +1,9 @@
 package TheClassics;
 
-import TheClassics.Singleton.LazyInitialization1.*;
-import TheClassics.Singleton.WhyWeUseFinal2.*;
-import TheClassics.Singleton.EagerInitialization3.*;
-import TheClassics.Singleton.NestedHelper4.*;
+import TheClassics.CreationalPatterns.Singleton.LazyInitialization1.*;
+import TheClassics.CreationalPatterns.Singleton.WhyWeUseFinal2.*;
+import TheClassics.CreationalPatterns.Singleton.EagerInitialization3.*;
+import TheClassics.CreationalPatterns.Singleton.NestedHelper4.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 

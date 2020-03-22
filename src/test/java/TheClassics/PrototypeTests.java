@@ -1,7 +1,7 @@
 package TheClassics;
 
-import TheClassics.Prototype.Cloneable1.*;
-import TheClassics.Prototype.Copyable2.*;
+import TheClassics.CreationalPatterns.Prototype.Cloneable1.*;
+import TheClassics.CreationalPatterns.Prototype.Copyable2.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 

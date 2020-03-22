@@ -1,9 +1,9 @@
 package TheClassics;
 
-import TheClassics.Builder.AbstractBuilder2.*;
-import TheClassics.Builder.InterfaceBuilder1.*;
-import TheClassics.Builder.Model.*;
-import TheClassics.Builder.NoDirectorExample.*;
+import TheClassics.CreationalPatterns.Builder.AbstractBuilder2.*;
+import TheClassics.CreationalPatterns.Builder.InterfaceBuilder1.*;
+import TheClassics.CreationalPatterns.Builder.Model.*;
+import TheClassics.CreationalPatterns.Builder.NoDirectorExample.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 
