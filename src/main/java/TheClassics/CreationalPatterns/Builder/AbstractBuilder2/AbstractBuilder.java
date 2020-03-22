@@ -6,7 +6,6 @@ public abstract class AbstractBuilder {
 
     protected ComplexObject object;
 
-
     /*
         Default methods that we keep here.
      */
