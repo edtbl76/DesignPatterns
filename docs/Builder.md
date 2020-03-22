@@ -19,10 +19,10 @@ The target objects of the Builder pattern are almost always immutable (i.e. can'
 
 ## Implementation Details
 
-### COMPLEX OBJECT<br>
+### COMPLEX OBJECT
 - this is the target of the Builder pattern. It is the object we want to create.
 
-### BUILDER <br>
+### BUILDER 
 -  interface that provides the generalized methods that should be implemented in order to create "a" representation
 of the complex object we want to create
 
@@ -51,15 +51,13 @@ Oracle generously provides guidelines in which abstract classes should be prefer
     - require non-public access modifiers
 - your use case requires non-static + non-final fields that can access/mutate the state of the object they are contained in.
 
-
-
-### CONCRETE BUILDER <br>
+### CONCRETE BUILDER 
 - these are implementations of the Builder, so they must implement the interface. 
 - we need 1 class for each type of representation we'll need to create. 
 - This is one of the major PROS of the Builder pattern (and interfaces in general), we can provide a different 
 implementation for different use cases. 
 
-### DIRECTOR<br>
+### DIRECTOR
 - The director knows how to assemble the complex object. I.e. it is responsible for instantiating the builder object
 and executing the necessary steps to instantiate each representation of the Complex Object
 
