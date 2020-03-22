@@ -53,7 +53,7 @@ class from the instantiation of the object itself.
 building a Singleton, consider deferring the use of "synchronized" internal
 to the global access point on the first time creation of the object (This
 is called Double Checked Locking)
-    - this reduces the unneccessary overhead of using blocking code for i
+    - this reduces the unnecessary overhead of using blocking code for i
     subsequent uses of the Singleton
 
 ## Diagram

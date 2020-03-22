@@ -71,7 +71,7 @@ multiple clones if we intend
 objects (which is one of the advantages of shallow copy) 
 
 ### SHALLOW vs. DEEP
-Superfically, the use cases have traditionally been:
+Superficially, the use cases have traditionally been:
 - use shallow for objects w/ primitive fields
 - use deep for objects w/ many references. 
 

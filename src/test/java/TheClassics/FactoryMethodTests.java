@@ -1,8 +1,8 @@
 package TheClassics;
 
-import TheClassics.CreationalPatterns.FactoryMethod.DeferredInstantiation2.*;
-import TheClassics.CreationalPatterns.FactoryMethod.Models.*;
-import TheClassics.CreationalPatterns.FactoryMethod.SimpleFactoryMethod1.*;
+import CreationalPatterns.TheClassics.FactoryMethod.DeferredInstantiation2.*;
+import CreationalPatterns.TheClassics.FactoryMethod.Models.*;
+import CreationalPatterns.TheClassics.FactoryMethod.SimpleFactoryMethod1.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 

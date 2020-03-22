@@ -1,9 +1,9 @@
 package TheClassics;
 
-import TheClassics.CreationalPatterns.Singleton.LazyInitialization1.*;
-import TheClassics.CreationalPatterns.Singleton.WhyWeUseFinal2.*;
-import TheClassics.CreationalPatterns.Singleton.EagerInitialization3.*;
-import TheClassics.CreationalPatterns.Singleton.NestedHelper4.*;
+import CreationalPatterns.TheClassics.Singleton.EagerInitialization3.*;
+import CreationalPatterns.TheClassics.Singleton.LazyInitialization1.*;
+import CreationalPatterns.TheClassics.Singleton.NestedHelper4.*;
+import CreationalPatterns.TheClassics.Singleton.WhyWeUseFinal2.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 
@@ -42,7 +42,7 @@ public class SingletonTests {
         BadSingletonCanBeExtended s2 = BadSingletonCanBeExtended.getSingleton();
         assertEquals(BadSingletonCanBeExtended.getCounter(), 1);
 
-        BadSingletonCanBeExtended.InnerSingleton s3 = s1.new InnerSingleton();
+        BadSingletonCanBeExtended.InnerSingleton s3 = new BadSingletonCanBeExtended.InnerSingleton();
         assertEquals(BadSingletonCanBeExtended.getCounter(), 2);
 
     }
@@ -66,7 +66,7 @@ public class SingletonTests {
 
     /*
         One good turn deserves another.
-        We're testing Bill Pugh's version of a Singleton here which isolates static methods from the instatiation of
+        We're testing Bill Pugh's version of a Singleton here which isolates static methods from the instantiation of
         the Singleton object through a nested "Helper" class.
 
         We just have to swap our assertion to "False" and if we want to be more accurate, we should search for any
