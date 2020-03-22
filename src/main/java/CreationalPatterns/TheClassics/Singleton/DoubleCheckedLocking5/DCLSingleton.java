@@ -1,14 +1,11 @@
 package CreationalPatterns.TheClassics.Singleton.DoubleCheckedLocking5;
 
+@SuppressWarnings("unused")
 public final class DCLSingleton {
 
     private static DCLSingleton singleton;
     private static int counter;
 
-
-    public static int getCounter() {
-        return counter;
-    }
 
     private DCLSingleton() {
         counter++;

@@ -1,5 +1,6 @@
 package CreationalPatterns.TheClassics.Singleton.WhyWeUseFinal2;
 
+@SuppressWarnings("unused")
 public class Launcher {
 
     public static void main(String[] args) {

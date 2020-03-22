@@ -7,8 +7,8 @@ public class CopyPrototype {
         provided getters.
         - This is incidental, because I didn't feel like writing a test to test the mutators.
      */
-    private int serialNumber;
-    private String model;
+    private final int serialNumber;
+    private final String model;
 
     public CopyPrototype(int serialNumber, String model) {
         this.serialNumber = serialNumber;

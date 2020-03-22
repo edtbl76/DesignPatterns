@@ -1,8 +1,12 @@
 package CreationalPatterns.TheClassics.Singleton.LazyInitialization1;
 
+@SuppressWarnings("unused")
 public class Launcher {
 
     public static void main(String[] args) {
+
+
+
 
         /*
             NOTE: we are accessing the Singleton statically, because its constructor is private.
