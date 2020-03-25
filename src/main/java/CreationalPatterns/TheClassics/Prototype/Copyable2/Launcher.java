@@ -17,5 +17,7 @@ public class Launcher {
         CopyPrototype cp2 = new CopyPrototype(cp1);
         System.out.print("Copied: ");
         cp2.print();
+
     }
+
 }
