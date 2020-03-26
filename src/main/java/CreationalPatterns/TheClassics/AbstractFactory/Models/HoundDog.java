@@ -1,6 +1,13 @@
 package CreationalPatterns.TheClassics.AbstractFactory.Models;
 
 public class HoundDog implements Canine {
+
+    public HoundDog() {}
+
+    public HoundDog(AnimalCoat coat) {
+        System.out.println("I'm a hound dog with a " + coat.toString().toLowerCase() + " coat");
+    }
+
     @Override
     public void speak() {
         // Beagle or Hound owners know what this means :)
