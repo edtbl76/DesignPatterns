@@ -1,3 +1,13 @@
+# Design Patterns
+// TODO make some comments
+
+## OOP
+// Introduce OOP concepts.
+
+## SOLID
+// Introduce OOP concepts. 
+
+
 # Creational Patterns
 Creational Patterns are patterns that solve problems associated with
 creating objects directly. 
