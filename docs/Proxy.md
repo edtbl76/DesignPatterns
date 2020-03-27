@@ -9,6 +9,36 @@ actual/intended object. The proxy should behave in a manner that is transparent 
 the user/client, such that the client can't tell the difference between the
 proxy and the intended object (were it actually able to speak to the latter.)
 
+
+### Proxy vs. Decorator
+While the implementation might be similar the two patterns have different
+responsibilities
+
+DECORATOR: add functionality <br>
+PROXY: control access to an object <br> 
+
+This is an important distinction. 
+
+### PROS
+
+
+### CONS
+- latency/time is a common concern. Proxies add a hop. It's important to keep
+the duration of execution in mind when implementing proxies. 
+    - this specifically refers to the delay introduced by the proxy code itself, it
+    doesn't consider operations that we'd have to perform either way (like 
+    facilitating a connection, etc.) unless the implementation of the proxy 
+    exacerbates that operation.
+- maintaining additional (often duplicate) code. 
+- unwanted obfuscation. 
+    - it is possible for the proxy to hide the response from the object
+    intended to be returned to the client. This is a negative side effect that
+    can lead to challenges. 
+
+(Have you ever noticed that when we hide data in a good way, we call it
+"abstraction", but if it happens in a negative way or as an unintentional 
+side effect, we call it "obfuscation"?) 
+
 ## Implementation Details
 Proxy is concerned with "Subjects". The "Subject of the Proxy" is the object/class we
 are trying to substitute for.
