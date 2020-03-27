@@ -1,6 +1,5 @@
 package CreationalPatterns.TheClassics.AbstractFactory.ParameterizedConstructors;
 
-import CreationalPatterns.TheClassics.AbstractFactory.Common.*;
 import CreationalPatterns.TheClassics.AbstractFactory.Models.*;
 
 public class ConcretePetFactory implements AbstractAnimalFactory{

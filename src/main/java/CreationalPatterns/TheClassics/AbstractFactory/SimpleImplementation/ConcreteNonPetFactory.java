@@ -1,4 +1,4 @@
-package CreationalPatterns.TheClassics.AbstractFactory.Common;
+package CreationalPatterns.TheClassics.AbstractFactory.SimpleImplementation;
 
 import CreationalPatterns.TheClassics.AbstractFactory.Models.*;
 
