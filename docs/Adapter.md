@@ -23,6 +23,11 @@ parts that store objects in a different manner such that we introduce a middle-m
 type object that takes the output of one object and transforms it into an input
 that the other object can understand.
 
+### CONS
+The only major cons are the added complexity to your system. 
+- While it takes more time and effort, sometimes rewriting code to provide a 
+uniform set of interfaces is a better decision. 
+
 ## Implementation Details
 
 ### OBJECT ADAPTERS
@@ -83,10 +88,27 @@ creating fully functional objects.
 
 ### CLASS ADAPTERS
 Class adapters adapt through subclassing and typically use multiple inheritance. 
-- This requires interfaces in Java. 
+- This requires interfaces in Java, and it tends to be more of workaround for 
+the actual pattern. 
+
+I demonstrate this briefly, but I recommend avoiding this pattern in Java.
+- Composition provides far more flexibility. 
+
+
 
 ## Diagram
 
 ## Recommended Use
 Adapters are used to introduce compatibility between two previously incompatible 
-classes.
+classes
+- 3rd party systems that we can't change/conform to
+- legacy systems that aren't cost effective to change/refactor
+
+NOTE: A very common mistake is to break the "single responsiblity" premise of SOLID, 
+by stuffing additional functionality/features in the adapter. 
+
+Don't do this.
+
+An adapter serves ONE purpose. It adapts. If you need additional functionality, 
+find a better place for it (Decorator?). This is how tight coupling and crappy
+code bases are created. 
