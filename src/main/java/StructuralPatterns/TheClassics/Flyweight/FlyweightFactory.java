@@ -30,7 +30,7 @@ public class FlyweightFactory {
             }
             flyweightFactory.put(type, flyweightType);
         } else {
-            System.out.println("\t\t Using existing " + type + " of object");
+            System.out.print("\n \t Using existing " + type + " of object");
         }
         return flyweightType;
     }
