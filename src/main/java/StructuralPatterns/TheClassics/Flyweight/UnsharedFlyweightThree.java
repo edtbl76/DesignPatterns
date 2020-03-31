@@ -12,7 +12,7 @@ public class UnsharedFlyweightThree implements SharedFlyweightInterface{
     private final String objectTypeCreated;
 
     public UnsharedFlyweightThree() {
-        objectTypeCreated = "Shared Flyweight Three (This is intrinsic state)";
+        objectTypeCreated = "Unshared Flyweight Three (This is intrinsic state)";
         System.out.print(objectTypeCreated);
     }
 
