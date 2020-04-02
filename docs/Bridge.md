@@ -20,8 +20,17 @@ object hierarchies.
 - the implementation is subclassed into "concrete implementation"
 
 So where does the bridge come in? It's the glue code we create that connects the
-abstraction and the implementation. 
+abstraction and the implementation.. at runtime.. in the client. 
 
+Another important concept is that "old school" subclassing/inheritance is NOT 
+part of the bridge pattern. subclassing is a compile-time relationship, which
+restricts the dynamic independence we want to achieve (i.e. runtime variance) 
+
+
+### CONS
+- it can be confused with other patterns (State pattern, Adapter pattern are
+probably the most common)
+- It becomes complicated very quickly.
 
 ## Implementation Details
 ABSTRACTION<br>
@@ -49,6 +58,8 @@ those layers.
     - by doing this, the entirety of the two layers are further separated, creating
     the desired flexibility. 
 
+
+
 ## Diagram
 
 ## Recommended Use
@@ -63,3 +74,4 @@ them in the pocket book.)
     the bridge pattern allows refactoring and redesign to happen within the
     implementation/underlying runtime without impacting the abstraction (the
     endpoints and interfaces being presented to paying customers.)
+    

@@ -47,6 +47,17 @@ public class Launcher {
         checkStates(servers);
 
         // DB CRASHES (Oh no!), followed by check state, autostart and confirmation
+        /*
+            This is represents the power of the Bridge Pattern.
+            Our abstractions are defined polymorphically as "Servers".
+
+            However, when we need to use autoStart(), which only exists in the DatabaseServer() (refined abstraction)
+            we can change the abstraction AT RUNTIME by casting.
+
+            Most inspections/IDE are going to recommend narrowing the above declaration's variable type to DatabaseServer
+            in the first place, but nonetheless this is one of the powers of the Bridge pattern.
+
+         */
         db.setState(new StopServer());
         checkStates(servers);
         ((DatabaseServer) db).autoStart();
