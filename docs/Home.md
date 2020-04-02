@@ -31,3 +31,14 @@ simplify software design
 By the classics, I'm referring to the patterns introduced in the 1994 book
 "Design Patterns: Elements of Reusable Object-Oriented Software" by the "Gang of Four"
 (Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides)
+
+
+# Behavioral Patterns 
+Behavioral patterns are focused on simplifications concerning the communication or
+interaction of objects.
+
+
+## The Classics
+By the classics, I'm referring to the patterns introduced in the 1994 book
+"Design Patterns: Elements of Reusable Object-Oriented Software" by the "Gang of Four"
+(Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides)
