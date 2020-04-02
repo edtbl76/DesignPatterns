@@ -24,6 +24,30 @@ abstraction and the implementation.
 
 
 ## Implementation Details
+ABSTRACTION<br>
+The abstraction defines the abstract interface (i.e. Interface or abstract class)
+- a salient point here is that it maintains a references to the Implementor
+
+REFINED ABSTRACTION <br>
+These are concrete classes that extend the interface of the abstraction. 
+
+IMPLEMENTOR<br>
+This is also an interface/abstract class that defines an interface for implementation
+classes
+
+CONCRETE IMPLEMENTOR<br>
+These are concrete classes that extend the interface of the IMPLEMENTOR.
+
+If you look carefully at the design, the Bridge pattern is "almost" a composite
+of a typical abstract <-> concrete relationship. 
+- In its simplest form we have an abstraction (i.e. an interface or abstract class) 
+and a concrete implementation, which are classes that implement/extend the abstraction.
+- the bridge pattern elaborates on this by creating "subsidiary" objects to each of 
+those layers. 
+    - the abstraction grows its own implementation
+    - the implementation grows its own abstraction. 
+    - by doing this, the entirety of the two layers are further separated, creating
+    the desired flexibility. 
 
 ## Diagram
 
