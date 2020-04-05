@@ -1,7 +1,10 @@
 package BehavioralPatterns.TheClassics.Visitor.BareAndComposite;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Officer implements Soldier {
 
@@ -22,6 +25,10 @@ public class Officer implements Soldier {
 
     public void add(Soldier soldier) {
         soldiers.add(soldier);
+    }
+
+    public void addAll(Collection<Soldier> collection) {
+        soldiers.addAll(collection);
     }
 
     public void remove(Soldier soldier) {
