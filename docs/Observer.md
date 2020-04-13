@@ -11,6 +11,18 @@ Observers register interest (i.e. subscribe) to a subject, such that when the
 state of the data in the subject, changes, all of the observers are notified
 of the change.
 
+### BENEFITS
+- subject and registered users (observers) are loosely coupled
+    - they don't need to know each other explicitly
+- registration/de-registration doesn't require any modification to the subjects
+- independently add/remove observers at anytime. 
+
+### CHALLENGES
+- memory leak is a concern of any event-based system. 
+    - (reg/dereg isnt performed properly)
+- notification order isn't dependable
+
+
 ## Implementation Details
 SUBJECT<br>
 This is an object of interest that other objects want to watch
