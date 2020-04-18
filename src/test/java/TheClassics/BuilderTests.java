@@ -1,9 +1,9 @@
 package TheClassics;
 
-import CreationalPatterns.TheClassics.Builder.AbstractBuilder2.*;
-import CreationalPatterns.TheClassics.Builder.InterfaceBuilder1.*;
-import CreationalPatterns.TheClassics.Builder.Model.*;
-import CreationalPatterns.TheClassics.Builder.NoDirectorExample.*;
+import CreationalPatterns.GoF.Builder.AbstractBuilder2.*;
+import CreationalPatterns.GoF.Builder.InterfaceBuilder1.*;
+import CreationalPatterns.GoF.Builder.Model.*;
+import CreationalPatterns.GoF.Builder.NoDirectorExample.*;
 import org.junit.*;
 import org.springframework.boot.test.system.*;
 
