@@ -1,53 +1,48 @@
-# SimpleFactory 
+# NullObject 
 
 ## Definition
-Create an object w/o exposing instantiation logic to client
+Object w/ no referenced value or w/ defined neutral/null behavior
+(From PLoP - Pattern Languages of Program Design)
 
 ## Discussion
-Factory is an object that creates other objects
-- USUALLY its done as FactoryMethod
-- less often you'll use an AbstractFactory (i.e. Factory of Factories)
+implements a do-nothing behavior or a default behavior when an 
+app encounters a null object instead of a real one. 
+- the purpose of the pattern is to create better solution of handling
+null (and NPE) through "null checks" or "null collaboration checks" used
+in if blocks. 
 
-SimpleFactory is Non GangOfFour
-- considered simplest form of factory patterns
+The solution is to ENCAPSULATE the absence of an object by providing
+a default behavior that does nothing.
 
 ## Implementation Details
-Factory handler determines the type that needs to be created(based
-on parameter) and then creates it. 
+- does/stores nothing.
 
-- since creational logic may vary, this is separated out of the individual
-objects. 
-
-CLIENT
-- wants an object... doesn't care how it is created. Just gimme the dang
-object!
-
-FACTORY CLASS + FACTORY INTERFACE
-- While this CAN be done w/ just a concrete class there are several reasons
-to prefer writing to abstraction
-    - newly added classes implement interface
-    - classes can be accessed polymorphically
-    - concrete only implementations require code changes (probably 
-    breaking) when you want to integrate new classes
-        - this violates the OpenClosed Principle
+Since it stores nothing and does nothing, it is typically a very 
+lightweight object. As a result, it makes sense to create an EAGER
+instance of a SINGLETON. 
+- saves memory. 
+- it's also likely that there will be a lot of null cases, or other
+use cases that would make use of the object. sharing that object makes
+more sense than creating new objects. 
 
 ### FLOW
     
 ### BENEFITS
-- reduce cyclomatic complexity in client code
 
 ### CHALLENGES
-- deciding which objects to create can become complex as it grows
-    - use factory method when that becomes too complex
-- adding a new object to create requires modification of the 
-create() method in the factory class. 
-    - VIOLATES Open-Closed Principle
-        (Closed for modification, open for extension)
-        
-
+- sometimes NPE debugging is necessary or more intuitive than using
+Null Objects
+- challenging to make the pattern appropriate for every object in 
+a system. 
+    - you still may end up w/ many different categories of a null
+    object, which can get expensive, even when using Singleton
+- incorrect implementation creates complex semantic defects to debug
 
 ## Diagram
 
 ## Recommended Use
+- avoiding NPEs
+- removing null checks
+    - cleaner code
 
 
